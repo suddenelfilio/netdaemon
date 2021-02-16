@@ -19,6 +19,29 @@ namespace NetDaemon.Common.Reactive.Services
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class LightEntityExtensions
+    {
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="pct"></param>
+        public static void DimTo(this LightEntity entity,short pct)
+        {
+            entity.TurnOn(new LightEntityTurnOnOptions()
+            {
+                Brightness_Pct = pct
+            });
+        }
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public class LightEntityTurnOnOptions : FluentExpandoObject
     {
         /// <summary>
@@ -91,15 +114,45 @@ namespace NetDaemon.Common.Reactive.Services
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public short White_Value { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public int Color_Temp { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public int Kelvin { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public CSS3Color Color_Name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public short Brightness { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public short Brightness_Pct { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public short Brightness_Step { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public short Brightness_Step_Pct { get; set; }
-        public long flash { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public long Flash { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string Effect { get; set; }
     }
 
